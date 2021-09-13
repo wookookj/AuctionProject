@@ -1,0 +1,46 @@
+mysql 
+id : root
+pw:1234
+포트번호 : 8080
+
+데이터 베이스명 : project
+
+회원가입 테이블
+create table signup(id varchar(12),sign_pw varchar(15) not null,sign_name varchar(10) not null,sign_tell varchar(15) not null,sign_email varchar(30) not null,sign_addr varchar(100) not null,sign_birth varchar(15) not null,primary key(id));
+alter table signup convert to character set utf8;
+
+마이페이지 테이블
+create table mymenu(id varchar(12) primary key,my_point int not null,my_buygrd int not null,my_sellgrd int not null);
+alter table mymenu convert to character set utf8;
+
+게시판 테이블
+create table board(num int primary key auto_increment,title varchar(30) not null,main text not null,id varchar(15) not null,hits int,date timestamp default now());
+alter table board convert to character set utf8;
+
+게시판 MVC 구조 테이블
+create table MVC_board(board_num int primary key auto_increment,board_id varchar(12) not null,board_title varchar(30) not null,board_content text not null,board_file varchar(30),board_re_ref int not null,board_re_lev int not null,board_re_seq int not null,board_hits int,board_date timestamp default now() not null);
+alter table MVC_board convert to character set utf8;
+
+게시판 MVC 구조 테이블 댓글 테이블
+create table MVC_board_dat(dat_num int primary key auto_increment,board_num int not null,dat_id varchar(12) not null,dat_content text not null,dat_re_ref int not null,dat_re_lev int not null,dat_re_seq int not null,dat_date timestamp default now() not null);
+alter table MVC_board_dat convert to character set utf8;
+
+온라인경매 MVC 구조 상품 테이블
+create table mvc_online_action(action_num int primary key auto_increment,action_date timestamp default now() not null,action_end varchar(12) not null,action_start_money int not null,action_kind varchar(8) not null,action_quick varchar(10) not null,action_adult varchar(6) not null,action_file varchar(30) not null,action_sellid varchar(12) not null,action_name varchar(50) not null, action_hit int not null,action_buy int not null,action_time int not null,action_content text);
+alter table mvc_online_action convert to character set utf8;
+
+온라인경매 MVC 구조 현재경매 테이블
+create table mvc_online_action_action(action_num int not null,action_buyid varchar(12) not null,action_end_money int not null);
+alter table mvc_online_action_action convert to character set utf8;
+
+온라인경매 MVC 구조 거래대기경매 테이블
+create table mvc_online_action_end(action_num int primary key,action_buyid varchar(12) not null,action_buyid_chk int not null,action_sellid varchar(12) not null,action_sellid_chk int not null);
+alter table mvc_online_action_end convert to character set utf8;
+
+채팅 테이블
+create table chat(action_num int not null,id varchar(12) not null,msg text);
+alter table chat convert to character set utf8;
+
+관심물품 테이블
+create table mylist(mylist_id varchar(12) not null,action_num int not null ,action_date timestamp not null,action_end varchar(12) not null,action_start_money int not null,action_kind varchar(8) not null,action_quick varchar(10) not null,action_adult varchar(6) not null,action_file varchar(30) not null,action_sellid varchar(12) not null,action_name varchar(50) not null, action_hit int not null,action_buy int not null,action_time int not null,action_content text,action_regist_date timestamp default now() not null);
+alter table mylist convert to character set utf8;
