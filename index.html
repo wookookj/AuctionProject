@@ -13,14 +13,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
 <style>
-    div {
-        margin : auto; 
-        width : 960px;
-	text-align : center;
-    }
+	div {
+		margin : auto; 
+		width : 960px;
+		text-align : center;
+	}
     	.slideup {
 		position : fixed;
-		bottom : 350px;
+		bottom : 600px;
 		left : 90%;
 		width : 50px;				
 	    	height : 50px;
@@ -29,9 +29,75 @@
 		color : white;
 		margin-bottom : 0;
 	}
-	.slidedown {
+	.auction {
+		position : fixed;
+		bottom : 550px;
+		left : 90%;
+		width : 50px;				
+	    height : 50px;
+		background-color : #5D5D5D;
+		line-height : 50px;
+		color : white;
+		margin-bottom : 0;
+	}
+	.mypage {
+		position : fixed;
+		bottom : 500px;
+		left : 90%;
+		width : 50px;				
+	    height : 50px;
+		background-color : #5D5D5D;
+		line-height : 50px;
+		color : white;
+		margin-bottom : 0;
+	}
+	.board {
+		position : fixed;
+		bottom : 450px;
+		left : 90%;
+		width : 50px;				
+	    height : 50px;
+		background-color : #5D5D5D;
+		line-height : 50px;
+		color : white;
+		margin-bottom : 0;
+	}
+	.signup {
+		position : fixed;
+		bottom : 400px;
+		left : 90%;
+		width : 50px;				
+	    height : 50px;
+		background-color : #5D5D5D;
+		line-height : 50px;
+		color : white;
+		margin-bottom : 0;
+	}
+	.login {
+		position : fixed;
+		bottom : 350px;
+		left : 90%;
+		width : 50px;				
+	    height : 50px;
+		background-color : #5D5D5D;
+		line-height : 50px;
+		color : white;
+		margin-bottom : 0;
+	}
+	.index {
 		position : fixed;
 		bottom : 300px;
+		left : 90%;
+		width : 50px;				
+	    height : 50px;
+		background-color : #5D5D5D;
+		line-height : 50px;
+		color : white;
+		margin-bottom : 0;
+	}
+	.slidedown {
+		position : fixed;
+		bottom : 250px;
 		left : 90%;
 		width : 50px;
 		height : 50px;
@@ -44,6 +110,10 @@
 		$(function (){
 			$('.slideup').click(function(){
 				$('html,body').animate( {scrollTop : 0},400);
+				return false;
+			});
+			$('.auction').click(function(){
+				$('html,body').animate( {scrollTop : 50},400);
 				return false;
 			});
 			$('.slidedown').click(function(){
@@ -67,8 +137,13 @@
     }
 </script>
 <div class ="slideup">▲</div>
+<div class ="auction">온라인경매</div>
+<div class ="mypage">마이페이지</div>
+<div class ="board">게시판</div>
+<div class ="signup">회원가입</div>
+<div class ="login">로그인</div>
+<div class ="index">index</div>
 <div class ="slidedown">▼</div>
 
 </body>
-
 </html>
