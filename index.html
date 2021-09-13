@@ -9,14 +9,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title> introduce project </title>
-
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
 <style>
     div {
         margin : auto; 
         width : 960px;
     }
+    .slideup {
+		position : fixed;
+		bottom : 100px;
+		left : 96%;
+		width : 50px;				
+        height : 50px;
+		background-color : #5D5D5D;
+		line-height : 50px;
+		color : white;
+		margin-bottom : 0;
+	}
+	.slidedown {
+		position : fixed;
+		bottom : 50px;
+		left : 96%;
+		width : 50px;
+		height : 50px;
+		background-color : #eeeeee;
+		line-height : 50px;
+		margin-bottom : 0;
+	}
 </style>
-
+<script>
+		$(function (){
+			$('.slideup').click(function(){
+				$('html,body').animate( {scrollTop : 0},400);
+				return false;
+			});
+			$('.slidedown').click(function(){
+				var scrollHeight = $(document).height();
+				$('html,body').animate( {scrollTop : scrollHeight},400);
+				return false;
+			});     		
+		});    
+</script>
 </head>
 
 <body>
@@ -30,7 +65,8 @@
         }
     }
 </script>
-
+<div class ="slideup">▲</div>
+<div class ="slidedown">▼</div>
 
 </body>
 
